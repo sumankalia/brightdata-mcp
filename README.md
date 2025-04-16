@@ -51,7 +51,9 @@ Some example queries that this MCP server will be able to help with:
 - "What's the 7d weather forecast in <location>?"
 - "Of the 3 highest paid tech CEOs, how long has their career been?"
 
-The GIF below demonstrates a minimal use case for Claude Desktop:
+The videos below demonstrates a minimal use case for Claude Desktop:
+
+![Demo](assets/Demo2.gif)
 
 ![Demo](Demo.gif)
 
