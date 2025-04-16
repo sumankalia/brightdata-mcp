@@ -14,6 +14,8 @@ Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](ht
    - Once created, copy the authentication string from the Scraping Browser overview tab
    - The authentication string will be formatted like: `brd-customer-[your-customer-ID]-zone-[your-zone-ID]:[your-password]`
 
+![image](https://github.com/user-attachments/assets/cb494aa8-d84d-4bb4-a509-8afb96872afe)
+
 
 ## Quickstart with Claude Desktop
 
