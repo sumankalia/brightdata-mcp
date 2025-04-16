@@ -2,6 +2,10 @@
 
 Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that enables referencing public web data. This server allows MCP clients like Claude Desktop, Cursor, Windsurf, OpenAI Agents and others make decisions based on the information available on the web.
 
+<a href="https://glama.ai/mcp/servers/@luminati-io/brightdata-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@luminati-io/brightdata-mcp/badge" alt="Bright Data MCP server" />
+</a>
+
 ## Account setup
 
 1. Make sure you have an account on [brightdata.com](https://brightdata.com) (new users get free credit for testing, and pay as you go options are available)
@@ -64,5 +68,5 @@ The videos below demonstrates a minimal use case for Claude Desktop:
 ### Timeouts when using certain tools
 
 Some tools can involve reading web data, and the amount of time needed to load the page can vary by quite a lot in extreme circumstances.
-To ensure that your agent will be able to conume the data, set a high enough timeout in your agent settings.
+To ensure that your agent will be able to consume the data, set a high enough timeout in your agent settings.
 A value of `180s` should be enough for 99% of requests, but some sites load slower than others, so tune this to your needs.
