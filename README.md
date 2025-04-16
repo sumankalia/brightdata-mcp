@@ -55,7 +55,7 @@ The videos below demonstrates a minimal use case for Claude Desktop:
 
 ![Demo](assets/Demo2.gif)
 
-![Demo](Demo.gif)
+![Demo](assets/Demo.gif)
 
 ## Troubleshooting
 
