@@ -8,8 +8,12 @@ Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](ht
 2. Get your API key from the [user settings page](https://brightdata.com/cp/setting/users)
 3. Create a Web Unlocker proxy zone called `mcp_unlocker` in your [control panel](https://brightdata.com/cp/zones)
     - You can override this zone in your MCP server with the env variable `WEB_UNLOCKER_ZONE`
-4. (optional) If you want to enable browser control tools, go to your [control panel](https://brightdata.com/cp/zones) and create a scraping browser zone.
-    - Look for the auth string in the format `brd-customer-$CUSTOMER-zone-$ZONE:$PASSWORD`
+4. (Optional) To enable browser control tools:
+   - Visit your Brightdata control panel at [brightdata.com/cp/zones](https://brightdata.com/cp/zones)
+   - Create a new 'scraping browser' zone
+   - Once created, copy the authentication string from the Scraping Browser overview tab
+   - The authentication string will be formatted like: `brd-customer-[your-customer-ID]-zone-[your-zone-ID]:[your-password]`
+
 
 ## Quickstart with Claude Desktop
 
