@@ -59,7 +59,7 @@ Some example queries that this MCP server will be able to help with:
 
 The videos below demonstrates a minimal use case for Claude Desktop:
 
-![Demo](assets/Demo2.gif)
+![Demo](assets/Demo3.gif)
 
 ![Demo](assets/Demo.gif)
 
