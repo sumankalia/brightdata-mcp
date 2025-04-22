@@ -1,0 +1,26 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - apiToken
+    properties:
+      apiToken:
+        type: string
+        description: "Bright Data API token, available in your Bright Data account settings"
+      webUnlockerZone:
+        type: string
+        description: "Optional: The Web Unlocker zone name (defaults to 'mcp_unlocker')"
+      browserAuth:
+        type: string
+        description: "Optional: Authentication string for the Scraping Browser (enables browser control tools)"
+  commandFunction: |
+    (config) => ({
+      command: 'node',
+      args: ['server.js'],
+      env: {
+        API_TOKEN: config.apiToken,
+        WEB_UNLOCKER_ZONE: config.webUnlockerZone,
+        BROWSER_AUTH: config.browserAuth
+      }
+    })
