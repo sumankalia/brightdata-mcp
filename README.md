@@ -2,9 +2,10 @@
 
 Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that enables referencing public web data. This server allows MCP clients like Claude Desktop, Cursor, Windsurf, OpenAI Agents and others make decisions based on the information available on the web.
 
-<a href="https://glama.ai/mcp/servers/@luminati-io/brightdata-mcp">
+[![smithery badge](https://smithery.ai/badge/@luminati-io/brightdata-mcp)](https://smithery.ai/server/@luminati-io/brightdata-mcp)   <a href="https://glama.ai/mcp/servers/@luminati-io/brightdata-mcp">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/@luminati-io/brightdata-mcp/badge" alt="Bright Data MCP server" />
-</a>
+</a>    
+
 
 ## Account setup
 
