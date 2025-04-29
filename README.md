@@ -18,7 +18,7 @@
 
 ## 🌟 Overview
 
-Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that enables AI agents to access and reference public web data in real-time. This server allows MCP clients like Claude Desktop, Cursor, Windsurf, OpenAI Agents and others to make decisions based on current information available on the web.
+Welcome to the official Bright Data Model Context Protocol (MCP) server, enabling LLMs, agents and apps to access, discover and extract web data in real-time. This server allows MCP clients, such as Claude Desktop, Cursor, Windsurf and others, to seamlessly search the web, navigate websites, take action and retrieve data - without getting blocked.
 
 ## ✨ Features
 
@@ -60,12 +60,12 @@ Official [Bright Data](https://brightdata.com) [Model Context Protocol (MCP)](ht
    - You can override this zone in your MCP server with the env variable `WEB_UNLOCKER_ZONE`
 
 4. (Optional) To enable browser control tools:
-   - Visit your Brightdata control panel at [brightdata.com/cp/zones](https://brightdata.com/cp/zones)
-   - Create a new 'scraping browser' zone
-   - Once created, copy the authentication string from the Scraping Browser overview tab
+   - Visit your Bright Data control panel at [brightdata.com/cp/zones](https://brightdata.com/cp/zones)
+   - Create a new 'Browser API' zone
+   - Once created, copy the authentication string from the Browser API overview tab
    - The authentication string will be formatted like: `brd-customer-[your-customer-ID]-zone-[your-zone-ID]:[your-password]`
 
-![Scraping Browser Setup](https://github.com/user-attachments/assets/cb494aa8-d84d-4bb4-a509-8afb96872afe)
+![Browser API Setup](https://github.com/user-attachments/assets/cb494aa8-d84d-4bb4-a509-8afb96872afe)
 
 ## 🔌 Other MCP Clients
 
