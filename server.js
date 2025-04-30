@@ -17,6 +17,49 @@ const api_headers = ()=>({
     'user-agent': `${package_json.name}/${package_json.version}`,
     authorization: `Bearer ${api_token}`
 });
+
+async function ensure_required_zones() {
+    try {
+        console.error('Checking for required zones...');
+        let response = await axios({
+            url: 'https://api.brightdata.com/zone/get_active_zones',
+            method: 'GET',
+            headers: api_headers(),
+        });
+        
+        let zones = response.data || [];
+        let has_unlocker_zone = zones.some(zone => zone.name === unlocker_zone);
+        
+        if (!has_unlocker_zone) {
+            console.error(`Required zone "${unlocker_zone}" not found, creating it...`);
+            let creation_response = await axios({
+                url: 'https://api.brightdata.com/zone',
+                method: 'POST',
+                headers: {
+                    ...api_headers(),
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    zone: {
+                        name: unlocker_zone,
+                        type: 'unblocker'
+                    },
+                    plan: {
+                        type: 'unblocker'
+                    }
+                }
+            });
+            console.error(`Zone "${unlocker_zone}" created successfully`);
+        } else {
+            console.error(`Required zone "${unlocker_zone}" already exists`);
+        }
+    } catch(e) {
+        console.error('Error checking/creating zones:', e.response?.data || e.message);
+    }
+}
+
+await ensure_required_zones();
+
 let server = new FastMCP({
     name: 'Bright Data',
     version: package_json.version,
