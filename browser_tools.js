@@ -24,7 +24,7 @@ let scraping_browser_navigate = {
         url: z.string().describe('The URL to navigate to'),
     }),
     execute: async({url})=>{
-        const page = await require_browser().get_page();
+        const page = await require_browser().get_page({url});
         try {
             await page.goto(url, {
                 timeout: 120000,
