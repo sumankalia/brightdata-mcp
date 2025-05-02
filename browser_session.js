@@ -5,6 +5,7 @@ export class Browser_session {
     constructor({cdp_endpoint}){
         this.cdp_endpoint = cdp_endpoint;
         this._domainSessions = new Map();
+        this._currentDomain = 'default';
     }
 
     _getDomain(url) {
@@ -72,7 +73,11 @@ export class Browser_session {
     }
 
     async get_page({url=null}={}){
-        const domain = url ? this._getDomain(url) : 'default';
+        if (url) 
+        {
+            this._currentDomain = this._getDomain(url);
+        }
+        const domain = this._currentDomain;
         try {
             const session = await this._getDomainSession(domain);
             if (session.browserClosed || !session.page)
@@ -135,6 +140,10 @@ export class Browser_session {
                 }
             }
             this._domainSessions.clear();
+        }
+        if (!domain) 
+        {
+            this._currentDomain = 'default';
         }
     }
 }
