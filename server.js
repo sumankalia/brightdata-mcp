@@ -255,3 +255,4 @@ function search_url(engine, query){
         return `https://www.bing.com/search?q=${q}`;
     return `https://www.google.com/search?q=${q}`;
 }
+
