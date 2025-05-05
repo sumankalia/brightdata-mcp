@@ -14,13 +14,13 @@ startCommand:
       browserAuth:
         type: string
         description: "Optional: Authentication string for the Scraping Browser (enables browser control tools)"
-  commandFunction: |
-    (config) => ({
-      command: 'node',
-      args: ['server.js'],
-      env: {
+  commandFunction: |-
+    config => ({ 
+      command: 'node', 
+      args: ['server.js'], 
+      env: { 
         API_TOKEN: config.apiToken,
-        WEB_UNLOCKER_ZONE: config.webUnlockerZone,
-        BROWSER_AUTH: config.browserAuth
-      }
+        WEB_UNLOCKER_ZONE: config.webUnlockerZone || 'mcp_unlocker',
+        BROWSER_AUTH: config.browserAuth || ''
+      } 
     })
