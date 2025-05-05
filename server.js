@@ -188,6 +188,126 @@ const datasets = [{
         'This can be a cache lookup, so it can be more reliable than scraping'
     ].join('\n'),
     inputs: ['url'],
+},
+{
+    id: 'zoominfo_company_profile',
+    dataset_id: 'gd_m0ci4a4ivx3j5l6nx',
+    description: [
+        'Quickly read structured ZoomInfo company profile data.',
+        'Requires a valid ZoomInfo company URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'instagram_profiles',
+    dataset_id: 'gd_l1vikfch901nx3by4',
+    description: [
+        'Quickly read structured Instagram profile data.',
+        'Requires a valid Instagram URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'instagram_posts',
+    dataset_id: 'gd_lk5ns7kz21pck8jpis',
+    description: [
+        'Quickly read structured Instagram post data.',
+        'Requires a valid Instagram URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'instagram_reels',
+    dataset_id: 'gd_lyclm20il4r5helnj',
+    description: [
+        'Quickly read structured Instagram reel data.',
+        'Requires a valid Instagram URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'instagram_comments',
+    dataset_id: 'gd_ltppn085pokosxh13',
+    description: [
+        'Quickly read structured Instagram comments data.',
+        'Requires a valid Instagram URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'facebook_posts',
+    dataset_id: 'gd_lyclm1571iy3mv57zw',
+    description: [
+        'Quickly read structured Facebook post data.',
+        'Requires a valid Facebook post URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'facebook_marketplace_listings',
+    dataset_id: 'gd_lvt9iwuh6fbcwmx1a',
+    description: [
+        'Quickly read structured Facebook marketplace listing data.',
+        'Requires a valid Facebook marketplace listing URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'facebook_company_reviews',
+    dataset_id: 'gd_m0dtqpiu1mbcyc2g86',
+    description: [
+        'Quickly read structured Facebook company reviews data.',
+        'Requires a valid Facebook company URL and number of reviews.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url','num_of_reviews'],
+},
+{
+    id: 'x_posts',
+    dataset_id: 'gd_lwxkxvnf1cynvib9co',
+    description: [
+        'Quickly read structured X post data.',
+        'Requires a valid X post URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'zillow_properties_listing',
+    dataset_id: 'gd_lfqkr8wm13ixtbd8f5',
+    description: [
+        'Quickly read structured zillow properties listing data.',
+        'Requires a valid zillow properties listing URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'booking_hotel_listings',
+    dataset_id: 'gd_m5mbdl081229ln6t4a',
+    description: [
+        'Quickly read structured booking hotel listings data.',
+        'Requires a valid booking hotel listing URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},
+{
+    id: 'youtube_videos',
+    dataset_id: 'gd_m5mbdl081229ln6t4a',
+    description: [
+        'Quickly read structured YpuTube videos data.',
+        'Requires a valid YouTube video URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
 }];
 for (let {dataset_id, id, description, inputs} of datasets)
 {
@@ -199,19 +319,56 @@ for (let {dataset_id, id, description, inputs} of datasets)
         description,
         parameters: z.object(parameters),
         execute: tool_fn(`web_data_${id}`, async(data)=>{
-            let response = await axios({
-                url: 'https://api.brightdata.com/datasets/v3/scrape',
-                params: {dataset_id},
+            let triggerResponse = await axios({
+                url: 'https://api.brightdata.com/datasets/v3/trigger',
+                params: {
+                    dataset_id,
+                    include_errors: true
+                },
                 method: 'POST',
                 data: [data],
                 headers: api_headers(),
-                responseType: 'text',
             });
-            if (!response.data?.length)
-                throw new Error('No data found');
-            console.error('[%s] %s %s', `web_data_${id}`, response.status,
-                response.statusText);
-            return response.data;
+            if (!triggerResponse.data?.snapshot_id) 
+            {
+                throw new Error('No snapshot ID returned from trigger request');
+            }
+            const snapshotId = triggerResponse.data.snapshot_id;
+            console.error(`[web_data_${id}] triggered collection with snapshot ID: ${snapshotId}`);
+            
+            const maxAttempts = 600; 
+            let attempts = 0;
+            
+            while (attempts < maxAttempts) {
+                try {
+                    let snapshotResponse = await axios({
+                        url: `https://api.brightdata.com/datasets/v3/snapshot/${snapshotId}`,
+                        params: {
+                            format: 'json'
+                        },
+                        method: 'GET',
+                        headers: api_headers()
+                    });
+                    
+                    if (snapshotResponse.data?.status === 'running') 
+                    {
+                        console.error(`[web_data_${id}] snapshot not ready, polling again (attempt ${attempts + 1}/${maxAttempts})`);
+                        attempts++;
+                        await new Promise(resolve => setTimeout(resolve, 1000)); 
+                        continue;
+                    }
+                    
+                    console.error(`[web_data_${id}] snapshot data received after ${attempts + 1} attempts`);
+                    let resultData = JSON.stringify(snapshotResponse.data);
+                    return resultData;
+                    
+                } catch (pollError) {
+                    console.error(`[web_data_${id}] polling error: ${pollError.message}`);
+                    attempts++;
+                    await new Promise(resolve => setTimeout(resolve, 1000)); 
+                }
+            }
+            throw new Error(`Timeout after ${maxAttempts} seconds waiting for data`);
         }),
     });
 }
