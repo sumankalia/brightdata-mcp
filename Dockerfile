@@ -1,19 +1,28 @@
-FROM node:22.12-alpine
+FROM node:22.12-alpine AS builder
 
+
+COPY . /app
+WORKDIR /app
+
+
+RUN --mount=type=cache,target=/root/.npm npm install
+
+FROM node:22-alpine AS release
 
 WORKDIR /app
 
 
-COPY package.json ./
+COPY --from=builder /app/server.js /app/
+COPY --from=builder /app/browser_tools.js /app/
+COPY --from=builder /app/browser_session.js /app/
+COPY --from=builder /app/package.json /app/
+COPY --from=builder /app/package-lock.json /app/
 
 
-RUN npm install --production --no-package-lock
+ENV NODE_ENV=production
 
 
-COPY server.js browser_tools.js browser_session.js ./
+RUN npm ci --ignore-scripts --omit-dev
 
 
-RUN chmod +x server.js
-
-
-CMD ["node", "server.js"]
+ENTRYPOINT ["node", "server.js"]
