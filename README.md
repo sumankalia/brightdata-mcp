@@ -33,6 +33,7 @@ Welcome to the official Bright Data Model Context Protocol (MCP) server, enablin
 ## 🔧 Available Tools
 
 
+
 |Feature|Description|
 |---|---|
 |search_engine|Scrape search results from Google, Bing or Yandex. Returns SERP results in markdown (URL, title, description)|
@@ -55,6 +56,17 @@ Welcome to the official Bright Data Model Context Protocol (MCP) server, enablin
 |web_data_zillow_properties_listing|Quickly read structured zillow properties listing data. Requires a valid zillow properties listing URL. This can be a cache lookup, so it can be more reliable than scraping|
 |web_data_booking_hotel_listings|Quickly read structured booking hotel listings data. Requires a valid booking hotel listing URL. This can be a cache lookup, so it can be more reliable than scraping|
 |web_data_youtube_videos|Quickly read structured YouTube videos data. Requires a valid YouTube video URL. This can be a cache lookup, so it can be more reliable than scraping|
+|scraping_browser_navigate|Navigate a scraping browser session to a new URL|
+|scraping_browser_go_back|Go back to the previous page|
+|scraping_browser_go_forward|Go forward to the next page|
+|scraping_browser_click|Click on an element. Avoid calling this unless you know the element selector (you can use other tools to find those)|
+|scraping_browser_links|Get all links on the current page, text and selectors. It's strongly recommended that you call the links tool to check that your click target is valid|
+|scraping_browser_type|Type text into an element|
+|scraping_browser_wait_for|Wait for an element to be visible on the page|
+|scraping_browser_screenshot|Take a screenshot of the current page|
+|scraping_browser_get_html|Get the HTML content of the current page. Avoid using the full_page option unless it is important to see things like script tags since this can be large|
+|scraping_browser_get_text|Get the text content of the current page|
+
 
 
 ## 🚀 Quickstart with Claude Desktop
