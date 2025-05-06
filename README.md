@@ -152,6 +152,36 @@ To ensure that your agent will be able to consume the data, set a high enough ti
 
 A value of `180s` should be enough for 99% of requests, but some sites load slower than others, so tune this to your needs.
 
+### spawn npx ENOENT
+
+This error occurs when your system cannot find the `npx` command. To fix it:
+
+#### Finding npm/Node Path
+
+**macOS:**
+
+```
+which node
+```
+
+Shows path like `/usr/local/bin/node`
+
+**Windows:**
+
+```
+where node
+```
+
+Shows path like `C:\Program Files\nodejs\node.exe`
+
+#### Update your MCP configuration:
+
+Replace the `npx` command with the full path to Node, for example, on mac, it will look as follows:
+
+```
+"command": "/usr/local/bin/node"
+```
+
 ## 👨‍💻 Contributing
 
 We welcome contributions to help improve the Bright Data MCP! Here's how you can help:
