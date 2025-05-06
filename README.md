@@ -142,6 +142,18 @@ To ensure that your agent will be able to consume the data, set a high enough ti
 
 A value of `180s` should be enough for 99% of requests, but some sites load slower than others, so tune this to your needs.
 
+## 👨‍💻 Contributing
+
+We welcome contributions to help improve the Bright Data MCP! Here's how you can help:
+
+1. **Report Issues**: If you encounter any bugs or have feature requests, please open an issue on our GitHub repository.
+2. **Submit Pull Requests**: Feel free to fork the repository and submit pull requests with enhancements or bug fixes.
+3. **Coding Style**: All JavaScript code should follow [Bright Data's JavaScript coding conventions](https://brightdata.com/dna/js_code). This ensures consistency across the codebase.
+4. **Documentation**: Improvements to documentation, including this README, are always appreciated.
+5. **Examples**: Share your use cases by contributing examples to help other users.
+
+For major changes, please open an issue first to discuss your proposed changes. This ensures your time is well spent and aligned with project goals.
+
 ## 📞 Support
 
 If you encounter any issues or have questions, please reach out to the Bright Data support team or open an issue in the repository.
