@@ -115,6 +115,16 @@ To use this MCP server with other agent types, you should adapt the following to
 - The full command to run the MCP server is `npx @brightdata/mcp`
 - The environment variable `API_TOKEN=<your-token>` must exist when running the server
 
+## 🎮 Try Bright Data MCP Playgrounds
+
+Want to try Bright Data MCP without setting up anything? 
+
+Check out this playground:
+
+[![2025-05-06_10h44_20](https://github.com/user-attachments/assets/52517fa6-827d-4b28-b53d-f2020a13c3c4)](https://smithery.ai/server/@luminati-io/brightdata-mcp/tools)
+
+This platform provide an easy way to explore the capabilities of Bright Data MCP without any local setup. Just sign in and start experimenting with web data collection!
+
 ## 💡 Usage Examples
 
 Some example queries that this MCP server will be able to help with:
