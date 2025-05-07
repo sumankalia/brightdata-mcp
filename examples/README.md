@@ -12,6 +12,10 @@ A curated list of community demos using Bright Data's MCP server.
 - **Langgraph with mcp-adapters demo**  
   [💻 Source Code](https://github.com/techwithtim/BrightDataMCPServerAgent)
 
+- **Researcher Agent built with Google ADK that is connected to Bright Data's MCP to fetch real-time data**
+
+  [💻Source Code](https://github.com/MeirKaD/MCP_ADK)
+
 - **Replacing 3 MCP servers with our MCP server to avoid getting blocked 🤯**  
   [📹 YouTube Demo](https://www.youtube.com/watch?v=0xmE0OJrNmg) 
 
