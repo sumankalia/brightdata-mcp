@@ -303,7 +303,7 @@ const datasets = [{
     id: 'youtube_videos',
     dataset_id: 'gd_m5mbdl081229ln6t4a',
     description: [
-        'Quickly read structured YpuTube videos data.',
+        'Quickly read structured YouTube videos data.',
         'Requires a valid YouTube video URL.',
         'This can be a cache lookup, so it can be more reliable than scraping'
     ].join('\n'),
