@@ -119,7 +119,7 @@ To use this MCP server with other agent types, you should adapt the following to
 
 Want to try Bright Data MCP without setting up anything? 
 
-Check out this playground:
+Check out this playground on [Smithery](https://smithery.ai/server/@luminati-io/brightdata-mcp/tools):
 
 [![2025-05-06_10h44_20](https://github.com/user-attachments/assets/52517fa6-827d-4b28-b53d-f2020a13c3c4)](https://smithery.ai/server/@luminati-io/brightdata-mcp/tools)
 
