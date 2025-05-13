@@ -53,7 +53,7 @@ Welcome to the official Bright Data Model Context Protocol (MCP) server, enablin
 ```
 ## 🔧 Available Tools
 
-[List of Avilable Tools](assets/Tools.md)
+[List of Available Tools](assets/Tools.md)
 
 ## 🔧 Account Setup
 
