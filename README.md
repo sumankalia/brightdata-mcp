@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://brightdata.com/">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl_OPxT2TiPrtxwIjYlt1EzqoJ6mYX2LK4xw&s" width="100" alt="Bright Data Logo">
+    <img src="https://mintlify.s3.us-west-1.amazonaws.com/brightdata/logo/light.svg" width="300" alt="Bright Data Logo">
   </a>
 </p>
 
@@ -18,7 +18,9 @@
 
 ## 🌟 Overview
 
-Welcome to the official Bright Data Model Context Protocol (MCP) server, enabling LLMs, agents and apps to access, discover and extract web data in real-time. This server allows MCP clients, such as Claude Desktop, Cursor, Windsurf and others, to seamlessly search the web, navigate websites, take action and retrieve data - without getting blocked.
+Welcome to the official Bright Data Model Context Protocol (MCP) server, enabling LLMs, agents and apps to access, discover and extract web data in real-time. This server allows MCP clients, such as Claude Desktop, Cursor, Windsurf and others, to seamlessly search the web, navigate websites, take action and retrieve data - without getting blocked - perfect for scraping tasks.
+
+![MCP](https://github.com/user-attachments/assets/b949cb3e-c80a-4a43-b6a5-e0d6cec619a7)
 
 ## ✨ Features
 
@@ -49,6 +51,9 @@ Welcome to the official Bright Data Model Context Protocol (MCP) server, enablin
   }
 }
 ```
+## 🔧 Available Tools
+
+[List of Available Tools](assets/Tools.md)
 
 ## 🔧 Account Setup
 
@@ -74,6 +79,16 @@ To use this MCP server with other agent types, you should adapt the following to
 - The full command to run the MCP server is `npx @brightdata/mcp`
 - The environment variable `API_TOKEN=<your-token>` must exist when running the server
 
+## 🎮 Try Bright Data MCP Playgrounds
+
+Want to try Bright Data MCP without setting up anything? 
+
+Check out this playground on [Smithery](https://smithery.ai/server/@luminati-io/brightdata-mcp/tools):
+
+[![2025-05-06_10h44_20](https://github.com/user-attachments/assets/52517fa6-827d-4b28-b53d-f2020a13c3c4)](https://smithery.ai/server/@luminati-io/brightdata-mcp/tools)
+
+This platform provide an easy way to explore the capabilities of Bright Data MCP without any local setup. Just sign in and start experimenting with web data collection!
+
 ## 💡 Usage Examples
 
 Some example queries that this MCP server will be able to help with:
@@ -85,6 +100,8 @@ Some example queries that this MCP server will be able to help with:
 - "Of the 3 highest paid tech CEOs, how long have their careers been?"
 
 ## 🎬 Demo
+
+For YouTube tutorials and demos: [Demo](examples/README.md)
 
 The videos below demonstrate a minimal use case for Claude Desktop:
 
@@ -100,6 +117,48 @@ Some tools can involve reading web data, and the amount of time needed to load t
 To ensure that your agent will be able to consume the data, set a high enough timeout in your agent settings.
 
 A value of `180s` should be enough for 99% of requests, but some sites load slower than others, so tune this to your needs.
+
+### spawn npx ENOENT
+
+This error occurs when your system cannot find the `npx` command. To fix it:
+
+#### Finding npm/Node Path
+
+**macOS:**
+
+```
+which node
+```
+
+Shows path like `/usr/local/bin/node`
+
+**Windows:**
+
+```
+where node
+```
+
+Shows path like `C:\Program Files\nodejs\node.exe`
+
+#### Update your MCP configuration:
+
+Replace the `npx` command with the full path to Node, for example, on mac, it will look as follows:
+
+```
+"command": "/usr/local/bin/node"
+```
+
+## 👨‍💻 Contributing
+
+We welcome contributions to help improve the Bright Data MCP! Here's how you can help:
+
+1. **Report Issues**: If you encounter any bugs or have feature requests, please open an issue on our GitHub repository.
+2. **Submit Pull Requests**: Feel free to fork the repository and submit pull requests with enhancements or bug fixes.
+3. **Coding Style**: All JavaScript code should follow [Bright Data's JavaScript coding conventions](https://brightdata.com/dna/js_code). This ensures consistency across the codebase.
+4. **Documentation**: Improvements to documentation, including this README, are always appreciated.
+5. **Examples**: Share your use cases by contributing examples to help other users.
+
+For major changes, please open an issue first to discuss your proposed changes. This ensures your time is well spent and aligned with project goals.
 
 ## 📞 Support
 
