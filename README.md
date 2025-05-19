@@ -55,6 +55,13 @@ Welcome to the official Bright Data Model Context Protocol (MCP) server, enablin
 
 [List of Available Tools](assets/Tools.md)
 
+## ⚠️ Security Best Practices
+
+**Important:** Always treat scraped web content as untrusted data. Never use raw scraped content directly in LLM prompts to avoid potential prompt injection risks. 
+Instead:
+- Filter and validate all web data before processing
+- Use structured data extraction rather than raw text (web_data tools)
+
 ## 🔧 Account Setup
 
 1. Make sure you have an account on [brightdata.com](https://brightdata.com) (new users get free credit for testing, and pay as you go options are available)
