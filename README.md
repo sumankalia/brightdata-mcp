@@ -68,8 +68,9 @@ Instead:
 
 2. Get your API key from the [user settings page](https://brightdata.com/cp/setting/users)
 
-3. Create a Web Unlocker proxy zone called `mcp_unlocker` in your [control panel](https://brightdata.com/cp/zones)
-   - You can override this zone in your MCP server with the env variable `WEB_UNLOCKER_ZONE`
+3. (Optional) Create a custom Web Unlocker zone 
+   - By default, we create a Web Unlocker zone automatically using your API token
+   - For more control, you can create your own Web Unlocker zone in your [control panel](https://brightdata.com/cp/zones) and specify it with the `WEB_UNLOCKER_ZONE` environment variable
 
 4. (Optional) To enable browser control tools:
    - Visit your Bright Data control panel at [brightdata.com/cp/zones](https://brightdata.com/cp/zones)
