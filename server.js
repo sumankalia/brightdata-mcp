@@ -173,6 +173,79 @@ const datasets = [{
     ].join('\n'),
     inputs: ['url'],
 }, {
+    id: 'amazon_product_search',
+    dataset_id: 'gd_lwdb4vjm1ehb499uxs',
+    description: [
+        'Quickly read structured amazon product search data.',
+        'Requires a valid seach keyword and amazon domain URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['keyword', 'url', 'pages_to_search'],
+    defaults: { pages_to_search: '1' },
+}, {
+    id: 'walmart_product',
+    dataset_id: 'gd_l95fol7l1ru6rlo116',
+    description: [
+        'Quickly read structured walmart product data.',
+        'Requires a valid product URL with /ip/ in it.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'walmart_seller',
+    dataset_id: 'gd_m7ke48w81ocyu4hhz0',
+    description: [
+        'Quickly read structured walmart seller data.',
+        'Requires a valid walmart seller URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'ebay_product',
+    dataset_id: 'gd_ltr9mjt81n0zzdk1fb',
+    description: [
+        'Quickly read structured ebay product data.',
+        'Requires a valid ebay product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},{
+    id: 'homedepot_products',
+    dataset_id: 'gd_lmusivh019i7g97q2n',
+    description: [
+        'Quickly read structured homedepot product data.',
+        'Requires a valid homedepot product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'zara_products',
+    dataset_id: 'gd_lct4vafw1tgx27d4o0',
+    description: [
+        'Quickly read structured zara product data.',
+        'Requires a valid zara product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'etsy_products',
+    dataset_id: 'gd_ltppk0jdv1jqz25mz',
+    description: [
+        'Quickly read structured etsy product data.',
+        'Requires a valid etsy product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'bestbuy_products',
+    dataset_id: 'gd_ltre1jqe1jfr7cccf',
+    description: [
+        'Quickly read structured bestbuy product data.',
+        'Requires a valid bestbuy product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
     id: 'linkedin_person_profile',
     dataset_id: 'gd_l1viktl72bvl7bjuj0',
     description: [
@@ -185,6 +258,38 @@ const datasets = [{
     dataset_id: 'gd_l1vikfnt1wgvvqz95w',
     description: [
         'Quickly read structured linkedin company profile data',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'linkedin_job_listings',
+    dataset_id: 'gd_lpfll7v5hcqtkxl6l',
+    description: [
+        'Quickly read structured linkedin job listings data',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'linkedin_posts',
+    dataset_id: 'gd_lyy3tktm25m4avu764',
+    description: [
+        'Quickly read structured linkedin posts data',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'linkedin_pepole_search',
+    dataset_id: 'gd_m8d03he47z8nwb5xc',
+    description: [
+        'Quickly read structured linkedin pepole search data',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url','first_name','last_name'],
+}, {
+    id: 'crunchbase_company',
+    dataset_id: 'gd_l1vijqt9jfj7olije',
+    description: [
+        'Quickly read structured crunchbase company data',
         'This can be a cache lookup, so it can be more reliable than scraping'
     ].join('\n'),
     inputs: ['url'],
@@ -268,6 +373,124 @@ const datasets = [{
         'This can be a cache lookup, so it can be more reliable than scraping'
     ].join('\n'),
     inputs: ['url','num_of_reviews'],
+}, {
+    id: 'facebook_events',
+    dataset_id: 'gd_m14sd0to1jz48ppm51',
+    description: [
+        'Quickly read structured Facebook events data.',
+        'Requires a valid Facebook event URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'tiktok_profiles',
+    dataset_id: 'gd_l1villgoiiidt09ci',
+    description: [
+        'Quickly read structured Tiktok profiles data.',
+        'Requires a valid Tiktok profile URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'tiktok_posts',
+    dataset_id: 'gd_lu702nij2f790tmv9h',
+    description: [
+        'Quickly read structured Tiktok post data.',
+        'Requires a valid Tiktok post URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'tiktok_shop',
+    dataset_id: 'gd_m45m1u911dsa4274pi',
+    description: [
+        'Quickly read structured Tiktok shop data.',
+        'Requires a valid Tiktok shop product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'tiktok_comments',
+    dataset_id: 'gd_lkf2st302ap89utw5k',
+    description: [
+        'Quickly read structured Tiktok comments data.',
+        'Requires a valid Tiktok video URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'google_maps_reviews',
+    dataset_id: 'gd_luzfs1dn2oa0teb81',
+    description: [
+        'Quickly read structured Google maps reviews data.',
+        'Requires a valid Google maps URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url','days_limit'],
+    defaults: { days_limit: '3' },
+}, {
+    id: 'google_shopping',
+    dataset_id: 'gd_ltppk50q18kdw67omz',
+    description: [
+        'Quickly read structured Google shopping data.',
+        'Requires a valid Google shopping product URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'google_play_store',
+    dataset_id: 'gd_lsk382l8xei8vzm4u',
+    description: [
+        'Quickly read structured Google play store data.',
+        'Requires a valid Google play store app URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'apple_app_store',
+    dataset_id: 'gd_lsk9ki3u2iishmwrui',
+    description: [
+        'Quickly read structured apple app store data.',
+        'Requires a valid apple app store app URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'reuter_news',
+    dataset_id: 'gd_lyptx9h74wtlvpnfu',
+    description: [
+        'Quickly read structured reuter news data.',
+        'Requires a valid reuter news report URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'reuter_news',
+    dataset_id: 'gd_lyptx9h74wtlvpnfu',
+    description: [
+        'Quickly read structured reuter news data.',
+        'Requires a valid reuter news report URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'github_repository_file',
+    dataset_id: 'gd_lyrexgxc24b3d4imjt',
+    description: [
+        'Quickly read structured github repository data.',
+        'Requires a valid github repository file URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+}, {
+    id: 'yahoo_finance_bussiness',
+    dataset_id: 'gd_lmrpz3vxmz972ghd7',
+    description: [
+        'Quickly read structured yahoo finance bussiness data.',
+        'Requires a valid yahoo finance bussiness URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
 },
 {
     id: 'x_posts',
@@ -298,6 +521,34 @@ const datasets = [{
         'This can be a cache lookup, so it can be more reliable than scraping'
     ].join('\n'),
     inputs: ['url'],
+}, {
+    id: 'youtube_profiles',
+    dataset_id: 'gd_lk538t2k2p1k3oos71',
+    description: [
+        'Quickly read structured youtube profiles data.',
+        'Requires a valid youtube profile URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
+},  {
+    id: 'youtube_comments',
+    dataset_id: 'gd_lk9q0ew71spt1mxywf',
+    description: [
+        'Quickly read structured youtube comments data.',
+        'Requires a valid youtube video URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url', 'num_of_comments'],
+    defaults: { num_of_comments: '10' },
+},  {
+    id: 'reddit_posts',
+    dataset_id: 'gd_lvz8ah06191smkebj4',
+    description: [
+        'Quickly read structured reddit posts data.',
+        'Requires a valid reddit post URL.',
+        'This can be a cache lookup, so it can be more reliable than scraping'
+    ].join('\n'),
+    inputs: ['url'],
 },
 {
     id: 'youtube_videos',
@@ -309,16 +560,19 @@ const datasets = [{
     ].join('\n'),
     inputs: ['url'],
 }];
-for (let {dataset_id, id, description, inputs} of datasets)
+for (let {dataset_id, id, description, inputs, defaults = {}} of datasets)
 {
     let parameters = {};
-    for (let input of inputs)
-        parameters[input] = input=='url' ? z.string().url() : z.string();
+    for (let input of inputs){
+        const paramSchema = input == 'url' ? z.string().url() : z.string();
+        parameters[input] = defaults[input] !== undefined ? 
+            paramSchema.default(defaults[input]) : paramSchema;
+    }
     server.addTool({
         name: `web_data_${id}`,
         description,
         parameters: z.object(parameters),
-        execute: tool_fn(`web_data_${id}`, async(data)=>{
+        execute: tool_fn(`web_data_${id}`, async(data,ctx)=>{
             let triggerResponse = await axios({
                 url: 'https://api.brightdata.com/datasets/v3/trigger',
                 params: {
@@ -341,6 +595,16 @@ for (let {dataset_id, id, description, inputs} of datasets)
             
             while (attempts < maxAttempts) {
                 try {
+
+                    if (ctx && ctx.reportProgress) 
+                    {
+                        await ctx.reportProgress({
+                            progress: attempts,
+                            total: maxAttempts,
+                            message: `Polling for data (attempt ${attempts + 1}/${maxAttempts})`,
+                        });
+                    }
+
                     let snapshotResponse = await axios({
                         url: `https://api.brightdata.com/datasets/v3/snapshot/${snapshotId}`,
                         params: {
@@ -379,12 +643,12 @@ for (let tool of browser_tools)
 console.error('Starting server...');
 server.start({transportType: 'stdio'});
 function tool_fn(name, fn){
-    return async data=>{
+    return async (data,ctx)=>{
         debug_stats.tool_calls[name] = debug_stats.tool_calls[name]||0;
         debug_stats.tool_calls[name]++;
         let ts = Date.now();
         console.error(`[%s] executing %s`, name, JSON.stringify(data));
-        try { return await fn(data); }
+        try { return await fn(data, ctx); }
         catch(e){
             if (e.response)
             {
