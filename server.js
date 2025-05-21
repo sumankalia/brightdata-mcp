@@ -572,7 +572,7 @@ for (let {dataset_id, id, description, inputs, defaults = {}} of datasets)
         name: `web_data_${id}`,
         description,
         parameters: z.object(parameters),
-        execute: tool_fn(`web_data_${id}`, async(data,ctx)=>{
+        execute: tool_fn(`web_data_${id}`, async(data, ctx)=>{
             let triggerResponse = await axios({
                 url: 'https://api.brightdata.com/datasets/v3/trigger',
                 params: {
@@ -595,7 +595,6 @@ for (let {dataset_id, id, description, inputs, defaults = {}} of datasets)
             
             while (attempts < maxAttempts) {
                 try {
-
                     if (ctx && ctx.reportProgress) 
                     {
                         await ctx.reportProgress({
@@ -604,7 +603,6 @@ for (let {dataset_id, id, description, inputs, defaults = {}} of datasets)
                             message: `Polling for data (attempt ${attempts + 1}/${maxAttempts})`,
                         });
                     }
-
                     let snapshotResponse = await axios({
                         url: `https://api.brightdata.com/datasets/v3/snapshot/${snapshotId}`,
                         params: {
@@ -643,7 +641,7 @@ for (let tool of browser_tools)
 console.error('Starting server...');
 server.start({transportType: 'stdio'});
 function tool_fn(name, fn){
-    return async (data,ctx)=>{
+    return async (data, ctx)=>{
         debug_stats.tool_calls[name] = debug_stats.tool_calls[name]||0;
         debug_stats.tool_calls[name]++;
         let ts = Date.now();

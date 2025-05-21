@@ -114,8 +114,7 @@ For YouTube tutorials and demos: [Demo](https://github.com/luminati-io/brightdat
 The videos below demonstrate a minimal use case for Claude Desktop:
 
 ![Demo](https://github.com/luminati-io/brightdata-mcp/blob/main/assets/Demo3.gif)
-
-https://github.com/user-attachments/assets/61ab0bee-fdfa-4d50-b0de-5fab96b4b91d
+![Demo](https://github.com/luminati-io/brightdata-mcp/blob/main/assets/Demo.gif)
 
 ## ⚠️ Troubleshooting
 
