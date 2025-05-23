@@ -6,6 +6,9 @@
     "bin": {
         "@brightdata/mcp": "./server.js"
     },
+    "scripts": {
+  "start": "node server.js"
+},
     "keywords": [
         "mcp",
         "brightdata"
