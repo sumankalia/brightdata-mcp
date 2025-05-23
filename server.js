@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict'; /*jslint node:true es9:true*/
+const dotenv = require("dotenv");
+dotenv.config();
+
 import {FastMCP} from 'fastmcp';
 import {z} from 'zod';
 import axios from 'axios';
@@ -61,6 +64,12 @@ let server = new FastMCP({
     version: package_json.version,
 });
 let debug_stats = {tool_calls: {}};
+
+const port = process.env.PORT || 8080;
+
+server.listen(port, () => {
+    console.log(`🚀 Bright Data MCP server listening on port ${port}`);
+});
 
 server.addTool({
     name: 'search_engine',
