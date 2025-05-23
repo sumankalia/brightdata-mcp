@@ -63,12 +63,6 @@ let server = new FastMCP({
 });
 let debug_stats = {tool_calls: {}};
 
-const port = process.env.PORT || 8080;
-
-server.listen(port, () => {
-    console.log(`🚀 Bright Data MCP server listening on port ${port}`);
-});
-
 server.addTool({
     name: 'search_engine',
     description: 'Scrape search results from Google, Bing or Yandex. Returns '
