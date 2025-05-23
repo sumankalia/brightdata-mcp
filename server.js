@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 'use strict'; /*jslint node:true es9:true*/
-const dotenv = require("dotenv");
-dotenv.config();
 
 import {FastMCP} from 'fastmcp';
 import {z} from 'zod';
